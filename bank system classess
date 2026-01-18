@@ -1,0 +1,18 @@
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+    
+    def deposit(self, amount):
+        self.balance += amount
+        return self.balance
+    
+    def withdraw(self, amount):
+        if amount > self.balance:
+            return "Insufficient funds"
+        self.balance -= amount
+        return self.balance
+
+KhattakAcc = BankAccount("Ahmad",20000)
+KhattakAcc.deposit(10000)
+KhattakAcc.withdraw(25000)
